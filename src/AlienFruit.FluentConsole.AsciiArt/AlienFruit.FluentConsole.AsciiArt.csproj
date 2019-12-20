@@ -7,13 +7,14 @@
     <Copyright>Copyright © Alexander Prokopovich 2020</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/AlienFruit/AlienFruit.Shell.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole.git</RepositoryUrl>
     <PackageTags>ascii art shell console terminal fluent</PackageTags>
     <Description>Draw ascii pictures in a console from OTML files.</Description>
     <PackageId>AlienFruit.FluentConsole.AsciiArt</PackageId>
     <Product>AlienFruit.FluentConsole.AsciiArt</Product>
-    <RepositoryType>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</RepositoryType>
+    <RepositoryType></RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
