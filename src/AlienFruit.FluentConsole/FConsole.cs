@@ -2,7 +2,7 @@
 
 namespace AlienFruit.FluentConsole
 {
-    public static partial class Console
+    public static partial class FConsole
     {
         private static ConsoleColor defaultForegroundColor = System.Console.ForegroundColor;
         private static ConsoleColor defaultBackgroundColor = System.Console.BackgroundColor;
@@ -12,29 +12,29 @@ namespace AlienFruit.FluentConsole
         public static FluentConsole Write<T>(T value)
         {
             ResetColors();
-            System.Console.Write(value);
+            Console.Write(value);
             return new FluentConsole();
         }
 
         public static FluentConsole WriteLine<T>(T value)
         {
             ResetColors();
-            System.Console.WriteLine(value);
+            Console.WriteLine(value);
             return new FluentConsole();
         }
 
         public static FluentConsole Write<T>(T value, ConsoleColor color)
         {
-            System.Console.ForegroundColor = color;
-            System.Console.Write(value);
+            Console.ForegroundColor = color;
+            Console.Write(value);
             ResetColors();
             return new FluentConsole();
         }
 
         public static FluentConsole WriteLine<T>(T value, ConsoleColor color)
         {
-            System.Console.ForegroundColor = color;
-            System.Console.WriteLine(value);
+            Console.ForegroundColor = color;
+            Console.WriteLine(value);
             ResetColors();
             return new FluentConsole();
         }
@@ -46,7 +46,7 @@ namespace AlienFruit.FluentConsole
         public static FluentConsole NextLine()
         {
             ResetColors();
-            System.Console.Write(Environment.NewLine);
+            Console.Write(Environment.NewLine);
             return new FluentConsole();
         }
 
@@ -56,8 +56,8 @@ namespace AlienFruit.FluentConsole
 
         public static FluentConsole ResetColors()
         {
-            System.Console.ForegroundColor = defaultForegroundColor;
-            System.Console.BackgroundColor = defaultBackgroundColor;
+            Console.ForegroundColor = defaultForegroundColor;
+            Console.BackgroundColor = defaultBackgroundColor;
             return new FluentConsole();
         }
 
@@ -72,49 +72,49 @@ namespace AlienFruit.FluentConsole
             
             public FluentConsole()
             {
-                this.startForegroundColor = System.Console.ForegroundColor;
-                this.startBackgroundColor = System.Console.BackgroundColor;
+                this.startForegroundColor = Console.ForegroundColor;
+                this.startBackgroundColor = Console.BackgroundColor;
             }
 
             public FluentConsole Color(ConsoleColor color)
             {
-                System.Console.ForegroundColor = color;
+                Console.ForegroundColor = color;
                 return this;
             }
 
             public FluentConsole BackgroundColor(ConsoleColor color)
             {
-                System.Console.BackgroundColor = color;
+                Console.BackgroundColor = color;
                 return this;
             }
 
             public FluentConsole Write<T>(T value)
             {
-                Console.Write(value);
+                FConsole.Write(value);
                 return this;
             }
 
             public FluentConsole WriteLine<T>(T value)
             {
-                Console.WriteLine(value);
+                FConsole.WriteLine(value);
                 return this;
             }
 
             public FluentConsole NextLine()
             {
-                Console.NextLine();
+                FConsole.NextLine();
                 return this;
             }
 
             public FluentConsole ResetColor()
             {
-                System.Console.ForegroundColor = this.startForegroundColor;
+                Console.ForegroundColor = this.startForegroundColor;
                 return this;
             }
 
             public FluentConsole ResetBackgroundColor()
             {
-                System.Console.BackgroundColor = this.startBackgroundColor;
+                Console.BackgroundColor = this.startBackgroundColor;
                 return this;
             }
 

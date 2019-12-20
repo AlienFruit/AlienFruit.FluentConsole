@@ -4,7 +4,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
 {
     public static class FluentShellExtensions
     {
-        public static AsciiArtBuilder GetAsciiArtBuilder(this Console.FluentConsole self)
+        public static AsciiArtBuilder GetAsciiArtBuilder(this FConsole.FluentConsole self)
         {
             return new AsciiArtBuilder()
                 .UseParserFactory(x => new AsciiPictureParser(new OtmlParserFactory().GetParser(x), System.Console.ForegroundColor, System.Console.BackgroundColor))
