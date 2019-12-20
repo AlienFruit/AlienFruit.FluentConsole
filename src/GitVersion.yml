@@ -1,0 +1,8 @@
+assembly-versioning-scheme: MajorMinorPatch
+assembly-informational-format: '{SemVer}'
+mode: ContinuousDelivery
+branches:
+    master:
+        increment: Patch
+ignore:
+    sha: []
