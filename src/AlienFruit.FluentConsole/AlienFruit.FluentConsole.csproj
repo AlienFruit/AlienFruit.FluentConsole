@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Copyright © Alexander Prokopovich 2020</Copyright>
+    <Authors>Alexander Prokopovich</Authors>
+    <Company>AlienFruit</Company>
+    <RepositoryUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole.git</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <NeutralLanguage>English</NeutralLanguage>
+    <PackageTags>shell console terminl fluent</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</PackageIconUrl>
+    <Description>Convenient fluent console. 
+Example: Shell.Color(ConsoleColor.Red).WriteLine("Red text");</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole</PackageProjectUrl>
+    <PackageId>AlienFruit.FluentConsole</PackageId>
+    <Product>AlienFruit.FluentConsole</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AsciiArt\**" />
+    <EmbeddedResource Remove="AsciiArt\**" />
+    <None Remove="AsciiArt\**" />
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="5.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Alexander Prokopovich</Authors>
+    <Company>AlienFruit</Company>
+    <Copyright>Copyright © Alexander Prokopovich 2020</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlienFruit/AlienFruit.Shell.git</RepositoryUrl>
+    <PackageTags>ascii art shell console terminal fluent</PackageTags>
+    <Description>Draw ascii pictures in a console from OTML files.</Description>
+    <PackageId>AlienFruit.FluentConsole.AsciiArt</PackageId>
+    <Product>AlienFruit.FluentConsole.AsciiArt</Product>
+    <RepositoryType>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</RepositoryType>
+    <PackageIconUrl>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AlienFruit.Otml" Version="1.1.0" />
+    <PackageReference Include="GitVersionTask" Version="5.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlienFruit.FluentConsole\AlienFruit.FluentConsole.csproj" />
+  </ItemGroup>
+
+</Project>
