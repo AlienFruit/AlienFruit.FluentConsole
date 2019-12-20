@@ -9,6 +9,8 @@ namespace AlienFruit.FluentConsole.AsciiArt
         private IAsciiPicturePainter painter;
         private Func<Stream, IAsciiPictureParser> parserFactory;
 
+        private const string picturesNamespace = "AlienFruit.FluentConsole.AsciiArt.AsciiPictures";
+
         public AsciiArtBuilder UsePainter(IAsciiPicturePainter painter)
         {
             this.painter = painter;
@@ -42,8 +44,15 @@ namespace AlienFruit.FluentConsole.AsciiArt
         public void DrawDemo(DemoPicture demoPicture)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            using (var stream = assembly.GetManifestResourceStream($"AlienFruit.Shell.AsciiArt.AsciiPictures.{demoPicture}.otml"))
+            using (var stream = assembly.GetManifestResourceStream($"{picturesNamespace}.{demoPicture}.otml"))
                 Draw(stream);
+        }
+
+        public void CopyDemoPictureToStream(DemoPicture demoPicture, Stream outputStream)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream($"{picturesNamespace}.{demoPicture}.otml"))
+                stream.CopyTo(outputStream);
         }
     }
 }
