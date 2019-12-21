@@ -11,7 +11,7 @@
     <PackageTags>shell console terminl fluent</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/AlienFruit/AlienFruit.FluentConsole/master/design/Icons/256w/Artboard 1.png</PackageIconUrl>
     <Description>Convenient fluent console. 
-Example: Shell.Color(ConsoleColor.Red).WriteLine("Red text");</Description>
+Example: FConsole.Color(ConsoleColor.Red).WriteLine("Red text");</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/AlienFruit/AlienFruit.FluentConsole</PackageProjectUrl>
