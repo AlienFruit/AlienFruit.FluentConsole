@@ -6,10 +6,13 @@ namespace AlienFruit.FluentConsole.AsciiArt
     public class AsciiPicturePainter : IAsciiPicturePainter
     {
         private readonly Action<(string text, ConsoleColor foregroundColor, ConsoleColor backgroundColor)> consoleWriter;
+        private readonly Action afterDrawAction;
 
-        public AsciiPicturePainter(Action<(string text, ConsoleColor foregroundColor, ConsoleColor backgroundColor)> consoleWriter)
+        public AsciiPicturePainter(Action<(string text, ConsoleColor foregroundColor, ConsoleColor backgroundColor)> consoleWriter,
+            Action afterDrawAction)
         {
             this.consoleWriter = consoleWriter;
+            this.afterDrawAction = afterDrawAction;
         }
 
         public void Draw(AsciiPicture picture)
@@ -60,6 +63,8 @@ namespace AlienFruit.FluentConsole.AsciiArt
 
             for (int a = 0; a < picture.PictureStyle.MarginBottom; a++)
                 Write(Environment.NewLine);
+
+            this.afterDrawAction?.Invoke();
         }
     }
 }
