@@ -4,10 +4,20 @@ namespace AlienFruit.FluentConsole
 {
     public static partial class FConsole
     {
-        private static ConsoleColor defaultForegroundColor = System.Console.ForegroundColor;
-        private static ConsoleColor defaultBackgroundColor = System.Console.BackgroundColor;
+        private static ConsoleColor defaultForegroundColor;
+        private static ConsoleColor defaultBackgroundColor;
 
-        public static FluentConsole GetInstance() => new FluentConsole(); 
+        static FConsole()
+        {
+            defaultForegroundColor = Console.ForegroundColor;
+            defaultBackgroundColor = Console.BackgroundColor;
+        }
+
+        public static FluentConsole GetInstance()
+        {
+            ResetColors();
+            return new FluentConsole();
+        }
 
         public static FluentConsole Write<T>(T value)
         {
