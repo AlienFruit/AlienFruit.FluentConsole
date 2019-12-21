@@ -5,33 +5,20 @@ namespace AlienFruit.FluentConsole.AsciiArt
 {
     public class AsciiPicturePainter : IAsciiPicturePainter
     {
-        private readonly Action<string> defaultColorConsoleWriter;
-        private readonly Action<string, ConsoleColor> specialColorConsoleWriter;
-        private readonly Action<ConsoleColor> foregroundColorSetter;
-        private readonly Action<ConsoleColor> backgroundColorSetter;
+        private readonly Action<(string text, ConsoleColor foregroundColor, ConsoleColor backgroundColor)> consoleWriter;
 
-        public AsciiPicturePainter(
-            Action<string> defaultColorConsoleWriter, 
-            Action<string, ConsoleColor> specialColorConsoleWriter,
-            Action<ConsoleColor> foregroundColorSetter,
-            Action<ConsoleColor> backgroundColorSetter)
+        public AsciiPicturePainter(Action<(string text, ConsoleColor foregroundColor, ConsoleColor backgroundColor)> consoleWriter)
         {
-            this.defaultColorConsoleWriter = defaultColorConsoleWriter;
-            this.specialColorConsoleWriter = specialColorConsoleWriter;
-            this.foregroundColorSetter = foregroundColorSetter;
-            this.backgroundColorSetter = backgroundColorSetter;
+            this.consoleWriter = consoleWriter;
         }
 
         public void Draw(AsciiPicture picture)
         {
-            var prewForegroundColor = System.Console.ForegroundColor;
-            var prewFBackgroundColor = System.Console.BackgroundColor;
-
-            this.foregroundColorSetter(picture.PictureStyle.Foreground);
-            this.backgroundColorSetter(picture.PictureStyle.Background);
-
+            void Write(string value) => this.consoleWriter((value, picture.PictureStyle.Foreground, picture.PictureStyle.Background));
+            void WriteColor(string value, ConsoleColor color) => this.consoleWriter((value, color, picture.PictureStyle.Background));
+             
             for (int a = 0; a < picture.PictureStyle.MarginTop; a++)
-                defaultColorConsoleWriter(Environment.NewLine);
+                Write(Environment.NewLine);
 
             var formates = picture.Formates.ToLookup(x => x.Row);
 
@@ -41,11 +28,11 @@ namespace AlienFruit.FluentConsole.AsciiArt
 
             for (int a = 0; a < picture.Source.Length; a++)
             {
-                defaultColorConsoleWriter(leftPadding);
+                Write(leftPadding);
 
                 if (!formates[a].Any())
                 {
-                    defaultColorConsoleWriter(picture.Source[a] + Environment.NewLine);
+                    Write(picture.Source[a] + Environment.NewLine);
                     continue;
                 }
 
@@ -56,26 +43,23 @@ namespace AlienFruit.FluentConsole.AsciiArt
                         if (x.Start > prevPos)
                         {
                             var s = picture.Source[a].Substring(prevPos, x.Start - prevPos);
-                            this.defaultColorConsoleWriter(s);
+                            Write(s);
                         }
 
                         var str = picture.Source[a].Substring(x.Start, x.Length) + (x.End >= picture.Source[a].Length ? Environment.NewLine : string.Empty);
-                        this.specialColorConsoleWriter(str, x.Color);
+                        WriteColor(str, x.Color);
                         prevPos = x.End;
                     });
 
                 if (prevPos < picture.Source[a].Length)
                 {
                     var s = picture.Source[a].Substring(prevPos, picture.Source[a].Length - prevPos) + Environment.NewLine;
-                    this.defaultColorConsoleWriter(s);
+                    Write(s);
                 }
             }
 
             for (int a = 0; a < picture.PictureStyle.MarginBottom; a++)
-                this.defaultColorConsoleWriter(Environment.NewLine);
-
-            this.foregroundColorSetter(prewForegroundColor);
-            this.backgroundColorSetter(prewFBackgroundColor);
+                Write(Environment.NewLine);
         }
     }
 }

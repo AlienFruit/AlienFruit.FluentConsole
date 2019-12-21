@@ -8,11 +8,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
         {
             return new AsciiArtBuilder()
                 .UseParserFactory(x => new AsciiPictureParser(new OtmlParserFactory().GetParser(x), System.Console.ForegroundColor, System.Console.BackgroundColor))
-                .UsePainter(new AsciiPicturePainter(
-                    x => System.Console.Write(x),
-                    (value, color) => self.Color(color).Write(value),
-                    x => self.Color(x),
-                    x => self.BackgroundColor(x)));
+                .UsePainter(new AsciiPicturePainter(x => self.Color(x.foregroundColor).BackgroundColor(x.backgroundColor).Write(x.text)));
         }
     }
 }

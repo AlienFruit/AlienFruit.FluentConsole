@@ -90,19 +90,19 @@ namespace AlienFruit.FluentConsole
 
             public FluentConsole Write<T>(T value)
             {
-                FConsole.Write(value);
+                Console.Write(value);
                 return this;
             }
 
             public FluentConsole WriteLine<T>(T value)
             {
-                FConsole.WriteLine(value);
+                Console.WriteLine(value);
                 return this;
             }
 
             public FluentConsole NextLine()
             {
-                FConsole.NextLine();
+                Console.Write(Environment.NewLine);
                 return this;
             }
 
