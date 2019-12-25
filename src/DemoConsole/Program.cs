@@ -1,5 +1,6 @@
 ﻿using AlienFruit.FluentConsole;
 using AlienFruit.FluentConsole.AsciiArt;
+using System;
 
 namespace TestConsole
 {
@@ -15,6 +16,11 @@ namespace TestConsole
 
             FConsole.GetInstance().GetAsciiArtBuilder()
                 .DrawDemo(DemoPicture.Alienfruit);
+
+            FConsole.Color(ConsoleColor.Red).Write("This")
+                .Color(ConsoleColor.Green).Write(" is")
+                .Color(ConsoleColor.Blue).Write(" color")
+                .ResetColor().Write(" text");
 
             FConsole.ReadKey();
         }

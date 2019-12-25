@@ -7,30 +7,33 @@ namespace AlienFruit.FluentConsole
         private static ConsoleColor defaultForegroundColor;
         private static ConsoleColor defaultBackgroundColor;
 
+        private static Func<FluentConsole> fluentConsoleFactory;
+
         static FConsole()
         {
             defaultForegroundColor = Console.ForegroundColor;
             defaultBackgroundColor = Console.BackgroundColor;
+            fluentConsoleFactory = () => new FluentConsole(Console.ForegroundColor, Console.BackgroundColor);
         }
 
         public static FluentConsole GetInstance()
         {
             ResetColors();
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
         public static FluentConsole Write<T>(T value)
         {
             ResetColors();
             Console.Write(value);
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
         public static FluentConsole WriteLine<T>(T value)
         {
             ResetColors();
             Console.WriteLine(value);
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
         public static FluentConsole Write<T>(T value, ConsoleColor color)
@@ -38,7 +41,7 @@ namespace AlienFruit.FluentConsole
             Console.ForegroundColor = color;
             Console.Write(value);
             ResetColors();
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
         public static FluentConsole WriteLine<T>(T value, ConsoleColor color)
@@ -46,29 +49,29 @@ namespace AlienFruit.FluentConsole
             Console.ForegroundColor = color;
             Console.WriteLine(value);
             ResetColors();
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
-        public static string ReadLine() => System.Console.ReadLine();
+        public static string ReadLine() => Console.ReadLine();
 
-        public static ConsoleKeyInfo ReadKey() => System.Console.ReadKey();
+        public static ConsoleKeyInfo ReadKey() => Console.ReadKey();
 
         public static FluentConsole NextLine()
         {
             ResetColors();
-            Console.Write(Environment.NewLine);
-            return new FluentConsole();
+            Console.WriteLine();
+            return fluentConsoleFactory();
         }
 
-        public static FluentConsole Color(ConsoleColor color) => new FluentConsole().Color(color);
+        public static FluentConsole Color(ConsoleColor color) => fluentConsoleFactory().Color(color);
 
-        public static FluentConsole BackgroundColor(ConsoleColor color) => new FluentConsole().BackgroundColor(color);
+        public static FluentConsole BackgroundColor(ConsoleColor color) => fluentConsoleFactory().BackgroundColor(color);
 
         public static FluentConsole ResetColors()
         {
             Console.ForegroundColor = defaultForegroundColor;
             Console.BackgroundColor = defaultBackgroundColor;
-            return new FluentConsole();
+            return fluentConsoleFactory();
         }
 
         public static void SetForegroundColor(ConsoleColor color) => defaultForegroundColor = System.Console.ForegroundColor = color;
@@ -80,10 +83,10 @@ namespace AlienFruit.FluentConsole
             private readonly ConsoleColor startForegroundColor;
             private readonly ConsoleColor startBackgroundColor;
             
-            public FluentConsole()
+            public FluentConsole(ConsoleColor foregroundColor, ConsoleColor backgroundColor)
             {
-                this.startForegroundColor = Console.ForegroundColor;
-                this.startBackgroundColor = Console.BackgroundColor;
+                this.startForegroundColor = foregroundColor;
+                this.startBackgroundColor = backgroundColor;
             }
 
             public FluentConsole Color(ConsoleColor color)
@@ -112,7 +115,7 @@ namespace AlienFruit.FluentConsole
 
             public FluentConsole NextLine()
             {
-                Console.Write(Environment.NewLine);
+                Console.WriteLine();
                 return this;
             }
 

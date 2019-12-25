@@ -104,6 +104,12 @@ namespace AlienFruit.FluentConsole.AsciiArt
             return model;
         }
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         private static (T result, bool success) ParseProperty<T>(OtmlNode node, string propertyName, Func<string, (bool success, T value)> valueParser)
         {
             if (node.Name != propertyName)
@@ -151,12 +157,6 @@ namespace AlienFruit.FluentConsole.AsciiArt
                 Length = length,
                 Color = color
             };
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)

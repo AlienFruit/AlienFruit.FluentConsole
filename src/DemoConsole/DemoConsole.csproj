@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlienFruit.FluentConsole.AsciiArt\AlienFruit.FluentConsole.AsciiArt.csproj" />
+    <ProjectReference Include="..\AlienFruit.FluentConsole\AlienFruit.FluentConsole.csproj" />
+  </ItemGroup>
+
+</Project>
