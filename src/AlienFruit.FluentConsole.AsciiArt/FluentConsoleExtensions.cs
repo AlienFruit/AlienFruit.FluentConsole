@@ -2,7 +2,7 @@
 
 namespace AlienFruit.FluentConsole.AsciiArt
 {
-    public static class FluentShellExtensions
+    public static class FluentConsoleExtensions
     {
         public static AsciiArtBuilder GetAsciiArtBuilder(this FConsole.FluentConsole self)
         {
