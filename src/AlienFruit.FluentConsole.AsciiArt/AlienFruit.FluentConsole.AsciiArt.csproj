@@ -22,6 +22,8 @@
     <None Remove="AsciiPictures\ApertureScience.otml" />
     <None Remove="AsciiPictures\DarthVader.otml" />
     <None Remove="AsciiPictures\Punisher.otml" />
+    <None Remove="AsciiPictures\RainbowPukeSkull.otml" />
+    <None Remove="AsciiPictures\RainbowPukeSkullOld.otml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +39,8 @@
     <EmbeddedResource Include="AsciiPictures\Punisher.otml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="AsciiPictures\RainbowPukeSkull.otml" />
+    <EmbeddedResource Include="AsciiPictures\RainbowPukeSkullOld.otml" />
   </ItemGroup>
 
   <ItemGroup>

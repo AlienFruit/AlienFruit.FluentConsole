@@ -17,6 +17,9 @@ namespace TestConsole
             FConsole.GetInstance().GetAsciiArtBuilder()
                 .DrawDemo(DemoPicture.Alienfruit);
 
+            FConsole.GetInstance().GetAsciiArtBuilder()
+                .DrawDemo(DemoPicture.RainbowPukeSkull);
+
             FConsole.Color(ConsoleColor.Red).Write("This")
                 .Color(ConsoleColor.Green).Write(" is")
                 .Color(ConsoleColor.Blue).Write(" color")

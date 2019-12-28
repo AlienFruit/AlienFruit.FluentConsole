@@ -5,6 +5,7 @@
         Alienfruit,
         ApertureScience,
         DarthVader,
-        Punisher
+        Punisher,
+        RainbowPukeSkull
     }
 }
