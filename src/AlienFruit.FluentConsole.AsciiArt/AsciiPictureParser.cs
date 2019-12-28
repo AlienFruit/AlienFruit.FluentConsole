@@ -39,7 +39,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
                 {
                     var value = node.Children.Where(x => x.Type == NodeType.Value).SingleOrDefault()
                         ?? throw new ArgumentException("The source node doen't contain a value");
-                    model.Source = value.Value.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    model.Source = value.Value.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                 }
 
                 if(node.Name == "style")
