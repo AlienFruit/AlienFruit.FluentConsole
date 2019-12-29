@@ -16,12 +16,22 @@ namespace AlienFruit.FluentConsole
             fluentConsoleFactory = () => new FluentConsole(Console.ForegroundColor, Console.BackgroundColor);
         }
 
+        /// <summary>
+        /// Get FluentConsole instance, necessary if you need to use any extension
+        /// </summary>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole GetInstance()
         {
             ResetColors();
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Writes the text representation of the specified object to the standard output stream.
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">Object</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole Write<T>(T value)
         {
             ResetColors();
@@ -29,6 +39,12 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">>Object</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole WriteLine<T>(T value)
         {
             ResetColors();
@@ -36,6 +52,13 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Writes the text representation of the specified object to the standard output stream.
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">Object</param>
+        /// <param name="color">Foreground text color</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole Write<T>(T value, ConsoleColor color)
         {
             Console.ForegroundColor = color;
@@ -44,6 +67,13 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
+        /// </summary>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">Object</param>
+        /// <param name="color">>Foreground text color</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole WriteLine<T>(T value, ConsoleColor color)
         {
             Console.ForegroundColor = color;
@@ -52,10 +82,28 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream.
+        /// </summary>
+        /// <returns>The next line of characters from the input stream, or null if no more lines are available.</returns>
         public static string ReadLine() => Console.ReadLine();
 
+        /// <summary>
+        /// Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+        /// </summary>
+        /// <returns>
+        /// An object that describes the System.ConsoleKey constant and Unicode character,
+        /// if any, that correspond to the pressed console key. The System.ConsoleKeyInfo
+        /// object also describes, in a bitwise combination of System.ConsoleModifiers values,
+        /// whether one or more Shift, Alt, or Ctrl modifier keys was pressed simultaneously
+        /// with the console key.
+        /// </returns>
         public static ConsoleKeyInfo ReadKey() => Console.ReadKey();
 
+        /// <summary>
+        /// Writes the current line terminator to the standard output stream.
+        /// </summary>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole NextLine()
         {
             ResetColors();
@@ -63,10 +111,25 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
+        /// <summary>
+        /// Set foreground text color of FluentConsole instance
+        /// </summary>
+        /// <param name="color">new foreground color</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole Color(ConsoleColor color) => fluentConsoleFactory().Color(color);
 
+
+        /// <summary>
+        /// Set background text color of FluentConsole instance
+        /// </summary>
+        /// <param name="color">new background color</param>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole BackgroundColor(ConsoleColor color) => fluentConsoleFactory().BackgroundColor(color);
 
+        /// <summary>
+        /// Reset instanse colors to default
+        /// </summary>
+        /// <returns>FluentConsole instance</returns>
         public static FluentConsole ResetColors()
         {
             Console.ForegroundColor = defaultForegroundColor;
@@ -74,9 +137,17 @@ namespace AlienFruit.FluentConsole
             return fluentConsoleFactory();
         }
 
-        public static void SetForegroundColor(ConsoleColor color) => defaultForegroundColor = System.Console.ForegroundColor = color;
-        
-        public static void SetBackgroundColor(ConsoleColor color) => defaultBackgroundColor = System.Console.BackgroundColor = color;
+        /// <summary>
+        /// Default foreground color which apply after ResetColors
+        /// </summary>
+        /// <param name="color">new default color</param>
+        public static void SetDefaultForegroundColor(ConsoleColor color) => defaultForegroundColor = Console.ForegroundColor = color;
+
+        /// <summary>
+        /// Default background color which apply after ResetColors
+        /// </summary>
+        /// <param name="color">new default color</param>
+        public static void SetDefaultBackgroundColor(ConsoleColor color) => defaultBackgroundColor = Console.BackgroundColor = color;
 
         public class FluentConsole
         {
@@ -89,48 +160,95 @@ namespace AlienFruit.FluentConsole
                 this.startBackgroundColor = backgroundColor;
             }
 
+
+            /// <summary>
+            /// Set foreground text color of FluentConsole instance
+            /// </summary>
+            /// <param name="color">new foreground color</param>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole Color(ConsoleColor color)
             {
                 Console.ForegroundColor = color;
                 return this;
             }
 
+            /// <summary>
+            /// Set background text color of FluentConsole instance
+            /// </summary>
+            /// <param name="color">new background color</param>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole BackgroundColor(ConsoleColor color)
             {
                 Console.BackgroundColor = color;
                 return this;
             }
 
+            /// <summary>
+            /// Writes the text representation of the specified object to the standard output stream.
+            /// </summary>
+            /// <typeparam name="T">Object type</typeparam>
+            /// <param name="value">Object</param>
+            /// <param name="color">Foreground text color</param>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole Write<T>(T value)
             {
                 Console.Write(value);
                 return this;
             }
 
+            /// <summary>
+            /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
+            /// </summary>
+            /// <typeparam name="T">Object type</typeparam>
+            /// <param name="value">Object</param>
+            /// <param name="color">>Foreground text color</param>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole WriteLine<T>(T value)
             {
                 Console.WriteLine(value);
                 return this;
             }
 
+            /// <summary>
+            /// Writes the current line terminator to the standard output stream.
+            /// </summary>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole NextLine()
             {
                 Console.WriteLine();
                 return this;
             }
 
+            /// <summary>
+            /// Reset instanse colos to default
+            /// </summary>
+            /// <returns>FluentConsole instance</returns>
+            public FluentConsole ResetColors()
+            {
+                Console.ForegroundColor = this.startForegroundColor;
+                Console.BackgroundColor = this.startBackgroundColor;
+                return this;
+            }
+
+            /// <summary>
+            /// Reset instanse foreground color to default
+            /// </summary>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole ResetColor()
             {
                 Console.ForegroundColor = this.startForegroundColor;
                 return this;
             }
 
+            /// <summary>
+            /// Reset instanse background color to default
+            /// </summary>
+            /// <returns>FluentConsole instance</returns>
             public FluentConsole ResetBackgroundColor()
             {
                 Console.BackgroundColor = this.startBackgroundColor;
                 return this;
             }
-
         }
 
     }
