@@ -19,10 +19,15 @@
 
   <ItemGroup>
     <None Remove="AsciiPictures\Alienfruit.otml" />
+    <None Remove="AsciiPictures\AlienfruitLogo.otml" />
     <None Remove="AsciiPictures\ApertureScience.otml" />
     <None Remove="AsciiPictures\DarthVader.otml" />
     <None Remove="AsciiPictures\Punisher.otml" />
     <None Remove="AsciiPictures\RainbowPukeSkull.otml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AsciiPictures\AlienfruitLogo.otml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,80 @@
+﻿@@version : 1.0
+
+@source : 
+	"                  ,/////.					"+
+	"               ///////////*.				"+
+	"             .//.  *//*.  **,				"+
+	"             / ,//////////*  .				"+
+	"    *///////  ///((((((////*, .*****,,		"+
+	"  ////////// ///(((##(((////*. *////***,.	"+
+	" ////(((((// ///((((((((////,. ///////**,.	"+
+	"*///((##((/  /////((((/////*.. */#(///**,.."+
+	"*////(((//.  ,///////////**..   *////**,,.."+
+	",*///////      ***////**,...     .****,...."+
+	" .***/*  .***,.  ........   ,**,.  .,.....	"+
+	"   .  *////////**.       ////////**,  ..	"+
+	"  .. ///((((/////*,.   /////((/////*,. .	"+
+	" */ //((((((((///*,.. ////((((((////*,. ..	"+
+	"//,.//(((##(((///*,.. ///(((##(((///*,. ,,."+
+	"//* ///((((((////*,.. *////(((((///**.. *,."+
+	"*// ,//////////**,..   *//////////**.. ,*,."+
+	" *//..*//////**,...     ,**////**,,.. ,*,.	"+
+	"  ,***  ,,,,,...           .,,..... .,,..	"+
+	"    .......   ///(((((////*..   ......		"+
+	"             *///////////*,...				"+
+	"              ,*///////*,....				"+
+	"               ..,,,,,.....				"
+	
+@style
+	background : Default
+	foreground : Green
+	margin-top : 2
+	margin-bottom : 2
+	margin-left : 0
+	
+select : 2, 13, 1, DarkGreen
+select : 2, 16, 1, DarkGreen
+select : 2, 23, 1, DarkGreen
+select : 0, 24, 1, DarkGreen
+select : 10,17, 8, DarkGreen
+select : 5, 29, 1, DarkGreen
+select : 6, 29, 1, DarkGreen
+select : 7, 28, 2, DarkGreen
+select : 8, 27, 2, DarkGreen
+select : 9, 25, 3, DarkGreen
+select : 11,15, 2, DarkGreen
+select : 11,17, 1, DarkGreen
+select : 12,17, 3, DarkGreen
+select : 13,17, 4, DarkGreen
+select : 14,17, 4, DarkGreen
+select : 15,17, 4, DarkGreen
+select : 16,15, 5, DarkGreen
+select : 17,13, 6, DarkGreen
+select : 18, 8, 8, DarkGreen
+select : 19, 4, 7, DarkGreen
+select : 22,15,12, DarkGreen
+select : 21,24, 5, DarkGreen
+select : 20,26, 4, DarkGreen
+select : 19,26,12, DarkGreen
+select : 18,27,14, DarkGreen
+select : 17,33, 9, DarkGreen
+select : 16,36, 7, DarkGreen
+select : 15,37, 6, DarkGreen
+select : 14,37, 6, DarkGreen
+select : 13,37, 5, DarkGreen
+select : 12,35, 5, DarkGreen
+select : 11,34, 6, DarkGreen
+select : 10,32,10, DarkGreen
+select : 9, 38, 5, DarkGreen
+select : 8, 39, 4, DarkGreen
+select : 7, 40, 3, DarkGreen
+select : 6, 39, 3, DarkGreen
+select : 5, 38, 3, DarkGreen
+select : 4, 35, 3, DarkGreen
+select : 12, 2, 2, DarkGreen
+select : 11, 3, 1, DarkGreen
+select : 10, 1, 1, DarkGreen
+select : 14, 2, 2, DarkGreen
+select : 16, 4, 1, DarkGreen
+select : 17, 4, 2, DarkGreen
+select : 8, 10, 1, DarkGreen
