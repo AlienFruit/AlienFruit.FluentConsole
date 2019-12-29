@@ -22,8 +22,14 @@ namespace TestConsole
 
             FConsole.Color(ConsoleColor.Red).Write("This")
                 .Color(ConsoleColor.Green).Write(" is")
-                .Color(ConsoleColor.Blue).Write(" color")
-                .ResetColor().Write(" text");
+                .Color(ConsoleColor.Blue).BackgroundColor(ConsoleColor.DarkGray).Write(" color")
+                .ResetColors().Write(" text");
+
+            FConsole.WriteLine("This is a text")
+                .Color(ConsoleColor.Green).WriteLine("This is a green text")
+                .BackgroundColor(ConsoleColor.Red).WriteLine("This is a green text with red background")
+                .ResetColors()
+                .WriteLine("This is a white text");
 
             FConsole.ReadKey();
         }
