@@ -117,7 +117,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
             
             var value = node.Children.Where(x => x.Type == NodeType.Value)
                 .SingleOrDefault() ?? throw new ArgumentException($"{propertyName} doesn't conain any values");
-            if (value.Value == "default")
+            if (value.Value.ToLower() == "default")
                 return (default, false);
 
             var parseResult = valueParser(value.Value);
