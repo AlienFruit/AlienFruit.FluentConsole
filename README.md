@@ -18,6 +18,8 @@ Probably many people have noticed that the code of change color in the console i
 Console.WriteLine("This is a text");
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("This is a green text");
+Console.BackgroundColor = ConsoleColor.Red;
+Console.WriteLine("his is a green text with red background");
 Console.ResetColor();
 Console.WriteLine("This is a white text");
 ```
