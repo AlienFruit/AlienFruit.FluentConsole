@@ -109,9 +109,9 @@ https://github.com/AlienFruit/AlienFruit.Otml
 
 # detailed method
 @select
-	row : 0					# row number
-	start : 6				# start selection
-	length : 8				# selection length
+	row : 0			# row number
+	start : 6		# start selection
+	length : 8		# selection length
 	foreground : darkGreen	# foreground color
 	background : default 	# background (optional)
 
@@ -146,8 +146,8 @@ https://github.com/AlienFruit/AlienFruit.Otml
     2			# row number
     0			# start selection
     20			# selection length
-    darkGreen,	# foreground color
-	default		# background (optional)
+    darkGreen,		# foreground color
+    default		# background (optional)
 
 
 @select	: 3, 0, 20, darkGreen
