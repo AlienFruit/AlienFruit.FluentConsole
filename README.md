@@ -66,7 +66,7 @@ Draw(string pictureFile) // draw from specified file path
 ```
 and
 ```C#
-Draw(Stream stream)	//draw from stream
+Draw(Stream stream) //draw from stream
 ```
 Example:
 ```C#
@@ -115,25 +115,24 @@ https://github.com/AlienFruit/AlienFruit.Otml
 	foreground : darkGreen	# foreground color
 	background : default 	# background (optional)
 
-#	All available colors:
-#	black
-#	darkBlue
-#	darkGreen
-#	darkCyan
-#	darkRed
-#	darkMagenta
-#	darkYellow
-#	gray
-#	darkGray
-#	blue
-#	green
-#	cyan
-#	red
-#	magenta
-#	yellow
-#	white
-#	default - default console color
-
+# All available colors:
+# black
+# darkBlue
+# darkGreen
+# darkCyan
+# darkRed
+# darkMagenta
+# darkYellow
+# gray
+# darkGray
+# blue
+# green
+# cyan
+# red
+# magenta
+# yellow
+# white
+# default - default console color
 
 # or short method where
 # 1 - row number, 1 - start selection, 18 - selection length, 
