@@ -47,7 +47,14 @@
 
 # or short method
 @select	: 1, 1, 18, darkGreen, default	 # 1 - row number, 1 - start selection, 18 - selection length, red - foreground color, default - background color (optional)
-@select	: 2, 0, 20, darkGreen
+
+# or short method in other style
+@select
+	2
+	0
+	20
+	darkGreen
+
 @select	: 3, 0, 20, darkGreen
 @select	: 4, 0, 20, darkGreen
 @select	: 5, 0, 20, darkGreen
