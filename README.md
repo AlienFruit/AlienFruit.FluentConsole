@@ -86,7 +86,7 @@ https://github.com/AlienFruit/AlienFruit.Otml
 # @Source is an object which contains a multiline text, you can read more about an Otml multiline text on:
 # https://github.com/AlienFruit/AlienFruit.Otml/blob/master/docs/en/specification.md#multiline-values
 @source
-	"      -/////+-		 " +
+	"      -/////+-	     " +
 	" `-::+d/:--:/d+::-` " +
 	"//`  o+      ++  `//" +
 	"s   :Ns`    `sN-   s" +
