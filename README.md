@@ -102,9 +102,10 @@ https://github.com/AlienFruit/AlienFruit.Otml
 # this is an optional object
 @style
 	background : default	# background color of the all picture
-	foreground : green		# foreground color of tho all picture
-	margin-top : 2			# top margin, there are 2 empty text lines upper the picture
-	margin-bottom : 2		# bottom margin, there are 2 empty text lines down below the picture
+	foreground : green	# foreground color of tho all picture
+	margin-top : 2		# top margin, there are 2 empty text lines upper the picture
+	margin-bottom : 2	# bottom margin, there are 2 empty text lines down below the picture
+	margin-left : 2		# left margin, there are 2 empty chars on the picture left
 
 
 # for color text selection are used the spetial methods "@select"
