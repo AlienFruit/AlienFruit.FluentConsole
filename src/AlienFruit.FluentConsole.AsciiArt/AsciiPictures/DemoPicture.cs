@@ -4,6 +4,7 @@
     {
         Alienfruit,
         AlienfruitLogo,
+        AlienfruitLogoWithText,
         ApertureScience,
         DarthVader,
         Punisher,
