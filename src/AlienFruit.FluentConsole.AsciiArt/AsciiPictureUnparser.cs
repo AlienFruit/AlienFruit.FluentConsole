@@ -47,7 +47,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
                 this.nodeFactory.CreateValue(x.Row.ToString()),
                 this.nodeFactory.CreateValue(x.Start.ToString()),
                 this.nodeFactory.CreateValue(x.Length.ToString()),
-                this.nodeFactory.CreateValue(x.Color.ToString())
+                this.nodeFactory.CreateValue(x.Foreground.ToString())
             }));
             resultTree.AddRange(formates);
 

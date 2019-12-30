@@ -18,7 +18,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
         public void Draw(AsciiPicture picture)
         {
             void Write(string value) => this.consoleWriter((value, picture.PictureStyle.Foreground, picture.PictureStyle.Background));
-            void WriteColor(string value, ConsoleColor color) => this.consoleWriter((value, color, picture.PictureStyle.Background));
+            void WriteColor(string value, ConsoleColor color, ConsoleColor backgroundColor) => this.consoleWriter((value, color, backgroundColor));
              
             for (int a = 0; a < picture.PictureStyle.MarginTop; a++)
                 Write(Environment.NewLine);
@@ -50,7 +50,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
                         }
 
                         var str = picture.Source[a].Substring(x.Start, x.Length) + (x.End >= picture.Source[a].Length ? Environment.NewLine : string.Empty);
-                        WriteColor(str, x.Color);
+                        WriteColor(str, x.Foreground, x.Background);
                         prevPos = x.End;
                     });
 

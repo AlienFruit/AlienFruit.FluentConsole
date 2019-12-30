@@ -26,7 +26,8 @@ namespace AlienFruit.FluentConsole.AsciiArt
             public int Row { get; set; }
             public int Start { get; set; }
             public int Length { get; set; }
-            public ConsoleColor Color { get; set; }
+            public ConsoleColor Foreground { get; set; }
+            public ConsoleColor Background { get; set; }
             public int End => Start + Length;
 
             public bool Intersect(SelectionFormat value) 

@@ -39,13 +39,14 @@
 
 # detailed method
 @select
-	row : 0			# row number
-	start : 6		# start selection
-	length : 8		# selection length
-	color : darkGreen		# color
+	row : 0						# row number
+	start : 6					# start selection
+	length : 8					# selection length
+	foreground : darkGreen		# foreground color
+	background : default		# background color (optional)
 
 # or short method
-@select	: 1, 1, 18, darkGreen	 # 1 - row number, 1 - start selection, 18 - selection length, red - color
+@select	: 1, 1, 18, darkGreen, default	 # 1 - row number, 1 - start selection, 18 - selection length, red - foreground color, default - background color (optional)
 @select	: 2, 0, 20, darkGreen
 @select	: 3, 0, 20, darkGreen
 @select	: 4, 0, 20, darkGreen
