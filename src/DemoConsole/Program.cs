@@ -8,11 +8,12 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.DarthVader);
-            FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.ApertureScience);
-            FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.Alienfruit);
-            FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.RainbowPukeSkull);
-            FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.AlienfruitLogo);
+            FConsole.GetInstance()
+                .DrawDemo(DemoPicture.DarthVader)
+                .DrawDemo(DemoPicture.ApertureScience)
+                .DrawDemo(DemoPicture.Alienfruit)
+                .DrawDemo(DemoPicture.RainbowPukeSkull)
+                .DrawDemo(DemoPicture.AlienfruitLogo);
 
             FConsole.Color(ConsoleColor.Red).Write("This")
                 .Color(ConsoleColor.Green).Write(" is")
