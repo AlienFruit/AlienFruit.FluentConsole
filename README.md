@@ -52,7 +52,7 @@ FConsole.WriteLine("This is a white text");
 
 Use the following code for painting a demo picture.
 ```C#
-FConsole.GetInstance().GetAsciiArtBuilder().DrawDemo(DemoPicture.RainbowPukeSkull);
+FConsole.GetInstance().DrawDemo(DemoPicture.RainbowPukeSkull);
 ```
 
 Next, you will see the demo picture by xero. You can see all his works on http://0w.nz.
@@ -72,7 +72,7 @@ Draw(Stream stream) //draw from stream
 ```
 Example:
 ```C#
-FConsole.GetInstance().GetAsciiArtBuilder().Draw("yourAsciiPicture.otml");
+FConsole.GetInstance().Draw("yourAsciiPicture.otml");
 ```
 
 The picture file has OTML data format. 
