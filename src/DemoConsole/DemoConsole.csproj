@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlienFruit.FluentConsole.AsciiArt\AlienFruit.FluentConsole.AsciiArt.csproj" />
+    <ProjectReference Include="..\AlienFruit.FluentConsole.ProgressBar\AlienFruit.FluentConsole.ProgressBar.csproj" />
     <ProjectReference Include="..\AlienFruit.FluentConsole\AlienFruit.FluentConsole.csproj" />
   </ItemGroup>
 
