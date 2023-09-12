@@ -5,7 +5,7 @@ namespace AlienFruit.FluentConsole.AsciiArt
 {
     public static class FluentConsoleExtensions
     {
-        public static AsciiArtBuilder GetAsciiArtBuilder(this FConsole.FluentConsole self)
+        public static AsciiArtBuilder GetAsciiArtBuilder(this FluentConsole self)
         {
             return new AsciiArtBuilder()
                 .UseParserFactory(x => new AsciiPictureParser(new OtmlParserFactory().GetParser(x), System.Console.ForegroundColor, System.Console.BackgroundColor))
@@ -14,19 +14,19 @@ namespace AlienFruit.FluentConsole.AsciiArt
                     () => self.ResetColor().ResetBackgroundColor()));
         }
 
-        public static FConsole.FluentConsole Draw(this FConsole.FluentConsole self, Stream stream)
+        public static FluentConsole Draw(this FluentConsole self, Stream stream)
         {
             GetAsciiArtBuilder(self).Draw(stream);
             return self;
         }
 
-        public static FConsole.FluentConsole Draw(this FConsole.FluentConsole self, string pictureFile)
+        public static FluentConsole Draw(this FluentConsole self, string pictureFile)
         {
             GetAsciiArtBuilder(self).Draw(pictureFile);
             return self;
         }
 
-        public static FConsole.FluentConsole DrawDemo(this FConsole.FluentConsole self, DemoPicture demoPicture)
+        public static FluentConsole DrawDemo(this FluentConsole self, DemoPicture demoPicture)
         {
             GetAsciiArtBuilder(self).DrawDemo(demoPicture);
             return self;
